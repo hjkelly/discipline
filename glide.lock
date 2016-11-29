@@ -1,0 +1,10 @@
+hash: 14bfd785ccb2c298c9b7547212df97ed55fddc05b64c81652a75210d47c3a4e9
+updated: 2016-11-29T06:50:30.8043138-05:00
+imports:
+- name: github.com/caarlos0/env
+  version: d0de832ed2fbc4e7bfaa30ab5cf0b3417d15f529
+- name: github.com/julienschmidt/httprouter
+  version: 8c199fb6259ffc1af525cc3ad52ee60ba8359669
+- name: github.com/urfave/negroni
+  version: fde5e16d32adc7ad637e9cd9ad21d4ebc6192535
+testImports: []
