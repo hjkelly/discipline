@@ -6,6 +6,7 @@ import (
 	"strconv"
 
 	"github.com/hjkelly/discipline/config"
+	accountViews "github.com/hjkelly/discipline/services/account/views"
 	"github.com/julienschmidt/httprouter"
 	"github.com/urfave/negroni"
 )
@@ -19,6 +20,9 @@ func main() {
 	}
 
 	router := httprouter.New()
+
+	// Let each app register its routes.
+	accountViews.RegisterV1Handlers(router)
 
 	// Create the middleware handler
 	n := negroni.New()
