@@ -1,8 +1,17 @@
 language: go
 go:
   - '1.7'
+services:
+  - docker
 before_install:
   - mkdir $GOPATH/bin
   - curl https://glide.sh/get | sh
   - glide install
-script: go test $(glide novendor)
+script:
+  - go test $(glide novendor)
+after_success:
+  - if [ "$TRAVIS_BRANCH" == "master" ]; then
+    docker build -t hjkelly/discipline:production .;
+    docker login -e="$DOCKER_EMAIL" -u="$DOCKER_USERNAME" -p="$DOCKER_PASSWORD";
+    docker push hjkelly/discipline;
+    fi
