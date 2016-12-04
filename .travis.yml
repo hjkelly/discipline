@@ -4,7 +4,7 @@ go:
 services:
   - docker
 before_install:
-  - mkdir $GOPATH/bin
+  #- mkdir $GOPATH/bin
   - curl https://glide.sh/get | sh
   - glide install
 script:
